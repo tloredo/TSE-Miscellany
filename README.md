@@ -44,30 +44,28 @@ These modules were demonstated in Jeff Scargle's presentation at the time series
   Testing of this feature, and perhaps extending it to other error 
   models, could be a fruitful exercise.
 
-`ft_uneven.m` iss the original matlab program.
+`ft_uneven.m` is the original matlab program.
 
-`py_ft.py`, `numba_ft.py` and `cuda_ft.py` are written for Python, 
+`py_ft.py`, `numba_ft.py` and `cuda_ft.py` are written for Python,
 but have different requirements:
 
 * `py_ft.py`:
-  Only requires the `numpy` module. It can either run a single time 
-  series or a bulk of time series with a single call of a function.
-  If running a bulk calculation, mulitprocessing can be used. 
+  Only requires the `numpy` module. It can process either a single time
+  series or a collection of time series ("bulk calculation") with a single function call.
+  If running a bulk calculation, multiple threads can be used. 
   For this the `multiprocessing` module is required. 
-  Only if`multiprocessing` is invoked does the module need to be installed.
+  Only if `multiprocessing` is invoked does the module need to be installed.
 
 * `numba_ft.py`:
-  Requires the `numba` module, in addition to the `numpy` module. 
-  Here also single and bulk calculation can be envoked.
-  Multithreading can be used without requiring further modules. 
-  The `numba_ft.py` version runs around 3 times faster then the `py_ft.py` version on the development hardware.
+  Requires the `numba` module, in addition to the `numpy` module.
+  Here also single and bulk calculation can be invoked.
+  Multiple threads can be used without requiring further modules. 
+  The `numba_ft.py` version runs around 3 times faster than the `py_ft.py` version on the development hardware.
 
 * `cuda_ft.py`:
   Requires a CUDA-capable GPU, Nvidia-drivers, CUDA, and `cudnn`. 
-  CUDA and `cudnn` can be installed with `conda` installing `cudatoolkit`. 
-  Only a function calculating bulk can be called, which will run on the GPU.
-  For this module to run properly, the `times` and `omegas` arguments 
-  can only take 0.0 as an argument in the 0th index of the array. 
+  CUDA and `cudnn` can be installed with `conda` installing `cudatoolkit`. The provided function implements a bulk calculation, which will run on the GPU.
+  For this module to run properly, the `times` and `omegas` array arguments must each have 0.0 as the value in the 0th element. 
 
-The functions as well as their arguments are commeted for further information such as type of the arguments. 
+See the comments in the code for further information such as specification of the types of the arguments. 
 
