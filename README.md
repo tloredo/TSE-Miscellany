@@ -14,15 +14,14 @@ This R implementation was developed jointly by Scargle and Ryan Shiroma. The cod
 
 ## FourierUneven
 
-This folder contains a MATLAB(trademark The MathWorks, Inc.) script
+This folder contains a MATLAB script
 for computation of the complex Fourier transform of arbitrarily spaced
-time series data. It is a translation of FORTRAN code in Appendix B 
-in the paper:
+time series data. It is a translation of FORTRAN code in Appendix B in the paper:
 
 > Studies in Astronomical Time Series Analysis:
 > III. Fourier Transforms, Autocorrelation Functions,
 > and Cross-Correlation Functions of Unevenly Spaced Data.
-> Jeff Scargle, ApJ, 343, 874-887
+> Jeffrey D. Scargle, Astrophysical Journal, 343, 874-887 (1989); [ADS](https://ui.adsabs.harvard.edu/abs/1989ApJ...343..874S/abstract)
 
 The algorithm has been updated and includes incorporation of statistical weights
 as described in Appendix D.
@@ -33,7 +32,7 @@ for an unevenly sampled time series. All points can be sampled equally or weight
 The Python code was developed by Luca Kohlhepp, of the
 Institute for Theoretical Physics and Astrophysics, Julius-Maximilians-Universität Würzburg.
 
-These modules were demonstated in Jeff Scargle's presentation for a time series workshop held at the 237th AAS Meeting; see [AAS237-TimeSeries: Content for a workshop on time series data analysis at AAS 237, Jan 2021](https://github.com/tloredo/AAS237-TimeSeries) for the presentations from that workshop. Three exercises are suggested using this code:
+These modules were demonstated in Jeff Scargle's presentation at the time series data analysis workshop held at the 237th AAS Meeting; see [AAS237-TimeSeries: Content for a workshop on time series data analysis at AAS 237, Jan 2021](https://github.com/tloredo/AAS237-TimeSeries) for the presentations from that workshop. The presentation suggests three exercises that use this code:
 
 * A good test of the numerics of this algorithm is that it returns
   the same values as your favorite FFT for evenly sampled data.  
